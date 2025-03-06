@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Kameron", serif;
+    background-color: #fdfdfd;
+}
+
+#nav {
+    background-color: #7b1010;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome{
+    text-align: center;
+    font-family: "Kameron", serif;
+    margin-top: 1%;
+}
+
+#logo {
+    height: 50px;
+    max-width: 100%;
+}
+
+#login-systeme {
+    background-color: rgb(245, 157, 157);
+    padding: 4%;
+    border-radius: 10px;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 4%;
+    height: auto;
+    font-family: "Kameron", serif;
+}
+
+input, select {
+    width: 100%;
+    padding: 1%;
+    margin: 2% 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Kameron", serif;
+    appearance: none;  
+}
+
+select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #7b1010;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #c94f4f;
+}
