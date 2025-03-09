@@ -17,7 +17,7 @@
     </div>
     
     <div id="login-systeme">
-        <form action="sign.php" id="login-form" method="post">
+        <form action="conn.php" id="login-form" method="post">
             <input type="text" name="nom" placeholder="Entrez votre Nom" required>
             <input type="text" name="prenom" placeholder="Entrez votre prénom" required>
             <input type="email" name="email" placeholder="Entrez votre email" required>
