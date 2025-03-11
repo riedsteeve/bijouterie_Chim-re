@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire information bijou </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav id="nav">
+    <img src="images/logo.png" alt="Logo Bijouterie Chimere" id="logo">
+
+</nav>
+    <form action="">
+        <h4>Commande de bijou</h4>
+        <hr>
+
+        <div class="name-field">
+          <div>
+            <label>Nom du bijou</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Caractéristiques bijou</label>
+            <input type="textarea">
+          </div>  
+        </div>
+        <div>
+            <label>Adresse Mail du commandeur</label>
+            <input type="email">
+        </div>
+        <label for="price">Estimation prix des travaux : </label>
+        <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000" />
+        <output class="price-output" for="price"></output>
+        <div>
+            <label>Prix à payer</label>
+            <input type="number">
+        </div>
+        <div>
+            <label>Date de création</label>
+            <input type="month" name="month" id="month"/>
+        </div>
+        <div>
+            <label>Date de finalisation</label>
+            <input type="month" name="month" id="month"/>
+        </div>
+        <div>
+            <label>1er métier</label>
+            <input type="text">
+        </div>
+        <input type="submit" value="Envoyer">
+
+    </form>
+</body>
+</html>
