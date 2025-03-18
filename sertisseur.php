@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Opérateur - Bijouterie Chimère</title>
+    <title>Espace Sertisseur - Bijouterie Chimère</title>
     <link rel="stylesheet" href="monstyle.css">
 </head>
 <body>
-    <h1>Espace Fondeur</h1>
+    <h1>Espace Sertisseur</h1>
     <h2>Bijoux assignés</h2>
     <table>
         <tr>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td><img src="bague_emeraude.jpg" alt="Bague Émeraude" width="100"></td>
-            <td><?php echo $_POST['nom_bijou']; ?></td>
+            <td>Bague Émeraude</td>
             <td>Bague en or avec une émeraude centrale</td>
             <td>Fonte</td>
             <td><button onclick="ouvrirFormulaire()">Intervenir</button></td>
@@ -29,11 +29,18 @@
     <h2>Formulaire d’intervention</h2>
     <form action="validation.php" method="post" id="form-intervention" style="display:none;">
         <label for="etape">Type d'intervention :</label>
-        <select name="fonction" id="etape">
-            <option value="fonte">Fonte</option>
-            <option value="sertissage">Sertissage</option>
-            <option value="polissage">Polissage</option>
-        </select>
+        <select name="fonction">
+                <option value="fondeur" disabled selected>Fondeur</option>
+                <option value="Max(Fondeur)">Max(Fondeur)</option>
+                <option value="Laurent (Fondeur)">Laurent (Fondeur)</option>
+                <option value="Jérémy(Fondeur)">Jérémy(Fondeur)</option>
+                <option value="Gérard(Sertisseur)">Gérard(Sertisseur)</option>
+                <option value="Steeve(Sertisseur)">Steeve(Sertisseur)</option>
+                <option value="Yoan(Sertisseur)">Yoan(Sertisseur)</option>
+                <option value="Didier(Polisseur)">Didier(Polisseur)</option>
+                <option value="Samson(Polisseur)">Samson(Polisseur)</option>
+                <option value="Gabriel(Polisseur)">Gabriel(Polisseur)</option>
+            </select>
 
         <label for="commentaire">Date de début :</label>
        <input type="date" name="date_debut" id="etape">
@@ -47,20 +54,7 @@
         <label for="commentaire">Date de fin :</label>
        <input type="date" name="date_fin" id="etape">
 
-
-        <label for="etape-suivante">Passer à l’étape suivante :</label>
-        <select name="fonction">
-            <option value="fondeur" disabled selected>Fondeur</option>
-            <option value="Max(Fondeur)">Max(Fondeur)</option>
-            <option value="Laurent (Fondeur)">Laurent (Fondeur)</option>
-            <option value="Jérémy(Fondeur)">Jérémy(Fondeur)</option>
-            <option value="Gérard(Sertisseur)">Gérard(Sertisseur)</option>
-            <option value="Steeve(Sertisseur)">Steeve(Sertisseur)</option>
-            <option value="Yoan(Sertisseur)">Yoan(Sertisseur)</option>
-            <option value="Didier(Polisseur)">Didier(Polisseur)</option>
-            <option value="Samson(Polisseur)">Samson(Polisseur)</option>
-            <option value="Gabriel(Polisseur)">Gabriel(Polisseur)</option>
-        </select>
+ 
 
         <button type="submit">Valider l’intervention</button>
     </form>

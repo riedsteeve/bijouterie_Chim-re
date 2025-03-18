@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: #7b1010 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#nav {
+     height: 50px;
+     background-color: #bdc585;
+}
+
+#logo {
+    height: 60px;
+    max-width: 100%;
+}
+ 
+form {
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Kameron", serif;
+}
+
+h3 {
+    text-align: center;
+    color: #7b1010;
+    font-family: "Kameron", serif;
+
+}
+
+hr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    font-family: "Kameron", serif;
+
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Kameron", serif;
+height: 50px;
+}
+
+input[type="submit"] {
+    background: #7b1010;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-family: "Kameron", serif;
+
+}
+
+input[type="submit"]:hover {
+    background: #7b1010;
+    font-family: "Kameron", serif;
+
+}
+
+input[type="range"] {
+    width: 100%;
+    font-family: "Kameron", serif;
+
+}
+
+.price-output {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #7b1010;
+    text-align: center;
+    font-family: "Kameron", serif;
+
+}
+
+.name-field {
+    display: flex;
+    gap: 10px;
+    font-family: "Kameron", serif;
+
+}
+
+.name-field div {
+    flex: 1;
+    font-family: "Kameron", serif;
+
+}
+
+@media (max-width: 500px) {
+    .name-field {
+        flex-direction: column;
+    }
+}
+
+
+.card{
+    background-color: #ffffff;
+    padding: 5%;
+    height: 200px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    margin-left:2% ;
+    margin-right: 2%;
+    text-align: center;
+    border: #bdc585 5px solid;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.card a {
+     font-family: "Kameron", serif;
+     list-style: none;
+     font-size: larger;
+     text-decoration: none;
+     color: black;
+     font-weight: bold; 
+     cursor: pointer;
+     margin-top: 80%;
+     text-shadow: #615f5f 3px -1px 5px;
+}

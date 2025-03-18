@@ -4,87 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire information bijou </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!--<nav id="nav">
-    <img src="img/logo.png" alt="Logo Bijouterie Chimere" id="logo">
-</nav>-->
+<nav id="nav">
+    <img src="images/logo.png" alt="Logo Bijouterie Chimere" id="logo">
 
-    <form >
-        <h2>Commande de bijou</h2>
-        <div class="separation"></div>
-        <div class="corps-formulaire">
-            <div class="gauche">
-                <!--Champ nom du bijou-->
-                <div class="groupe">
-                    <label >Nom du bijou</label>
-                    <input type="text">
-                </div>
+</nav>
+    <form action="">
+        <h4>Commande de bijou</h4>
+        <hr>
 
-                <!--champ pour mettre le statut actuel du bijou-->
-                <div class="groupe">
-                    <p>
-                        A créer: <input type="checkbox">
-                        A réparer: <input type="checkbox">
-                        Finaliser: <input type="checkbox">
-                    </p>
-                </div>
-                <!--Champ pour upload les photos des bijoux-->
-                <div class="groupe">
-                    <label>Photo du bijou:</label>
-                    <input type="file">
-                </div>
-                <!--Champ pour l'adresse mail du client-->
-                <div class="groupe">
-                    <label>Adresse mail du client:</label>
-                    <input type="email">
-
-                </div>
-                <!--champ prix estimée-->
-                <div class="groupe">
-                    <label>Estimation prix des travaux :</label>
-                    <input type="number">
-                </div>
-                <!--champ prix final-->
-                <div class="groupe">
-                    <label>Prix à payer :</label>
-                    <input type="number">
-                </div>
-            </div>
-
-            <div class="droite">
-                <div class="description">
-                <!--Champ pour la description-->
-                <label>Caractéristiques du Bijou</label> <br>
-                <textarea  placeholder="Décrivez le bijou"></textarea>
-                </div>
-                <!--champ date de création-->
-                <div class="groupe">
-                    <label>Date de création :</label>
-                    <input type="date" name="date" id="date"/>
-                </div>
-                <!--champ date de finalisation-->
-                <div class="groupe">
-                    <label>Date de finalisation :</label>
-                    <input type="date" name="date" id="date"/>
-                </div>
-                <!--champ de sélection du premier métier pour travailler sur le bijou-->
-                <div class="groupe">
-                    <label>1er métier :</label>
-                    <select>
-                        <option value="option1">Polisseur</option>
-                        <option value="option2">Fondeur</option>
-                        <option value="option3">Sertisseur</option>
-                    </select>
-                </div>
-
-
-            </div>
+        <div class="name-field">
+          <div>
+            <label>Nom du bijou</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Caractéristiques bijou</label>
+            <input type="textarea">
+          </div>  
         </div>
-        <div class="pied-formulaire" align="center">
-            <button>Envoyer les informations</button>
+        <div>
+            <label>Adresse Mail du commandeur</label>
+            <input type="email">
         </div>
-</form>
+        <label for="price">Estimation prix des travaux : </label>
+        <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000" />
+        <output class="price-output" for="price"></output>
+        <div>
+            <label>Prix à payer</label>
+            <input type="number">
+        </div>
+        <div>
+            <label>Date de création</label>
+            <input type="month" name="month" id="month"/>
+        </div>
+        <div>
+            <label>Date de finalisation</label>
+            <input type="month" name="month" id="month"/>
+        </div>
+        <div>
+            <label>1er métier</label>
+            <input type="text">
+        </div>
+        <input type="submit" value="Envoyer">
+
+    </form>
 </body>
 </html>

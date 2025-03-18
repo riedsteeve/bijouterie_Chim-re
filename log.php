@@ -49,14 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Redirection vers la page des opérateurs
                         header('Location: operateur.php');
                         exit;
-                    case "admin":
-                        // Redirection vers la page d'administration
-                        header('Location: admin_dashboard.php');
-                        exit;
-                    case "superviseur":
-                        // Redirection vers la page du superviseur
-                        header('Location: superviseur.php');
-                        exit;
                     default:
                         echo "Accès non autorisé pour cette fonction.";
                         exit;
