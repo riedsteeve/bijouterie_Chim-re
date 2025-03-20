@@ -17,13 +17,18 @@
             <th>Étape actuelle</th>
             <th>Actions</th>
         </tr>
-        <tr>
-            <td><img src="bague_emeraude.jpg" alt="Bague Émeraude" width="100"></td>
-            <td>Bague Émeraude</td>
-            <td>Bague en or avec une émeraude centrale</td>
-            <td>Fonte</td>
-            <td><button onclick="ouvrirFormulaire()">Intervenir</button></td>
-        </tr>
+        <?php 
+        $requete = "SELECT nom_bijou, carct_bijou, fonction FROM creation_bijoux";
+        $resultat = $conn->query($requete);
+        while ($donnees = $resultat->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($donnees['nom_bijou']) . "</td>";
+            echo "<td>" . htmlspecialchars($donnees['carct_bijou']) . "</td>";
+            echo "<td>" . htmlspecialchars($donnees['fonction']) . "</td>";
+            echo "<td><button onclick='ouvrirFormulaire()'>Intervenir</button></td>";
+            echo "</tr>";
+        }
+        ?>
     </table>
 
     <h2>Formulaire d'intervention</h2>
@@ -61,6 +66,9 @@
                 <option value="Samson(Polisseur)">Samson(Polisseur)</option>
                 <option value="Gabriel(Polisseur)">Gabriel(Polisseur)</option>
             </select>
+
+            <label for="status">Status:</label>
+       <input type="checkbox" name="status" value="Terminé">
 
         <button type="submit">Valider l’intervention</button>
     </form>

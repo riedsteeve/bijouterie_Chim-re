@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 $nom_bijou = $_POST['nom_bijou'];
-$carct_bijou = $_FILES['carct_bijou'];
+$carct_bijou = $_POST['carct_bijou'];
 $mail_commandeur = $_POST['mail_commandeur'];
 $prix_payer = $_POST['prix_payer'];
 $date_debut = $_POST['date_debut'];

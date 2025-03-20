@@ -10,7 +10,7 @@
 
  
 
-    <form action="insertbijou.php" method="post">
+    <form action="insertbijou.php" method="post" enctype="multipart/form-data">
         <h3>Réparation de Bijoux</h3>
         <hr>
 

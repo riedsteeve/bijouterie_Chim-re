@@ -36,23 +36,18 @@ if ($stmt) {
         echo '<table>
                 <tr>
                     <th>Fonction</th>
+                    <th>Photo</th>
                     <th>Commentaire</th>
                     <th>Date début</th>
                     <th>Date fin</th>
                 </tr>';
-        
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
-                    <td>" . ($row["fonction"]) . "</td>
-                    <td>" . htmlspecialchars($row["comm"]) . "</td>";
-            if (!empty($row["photo"])) {
-                 
-            } else {
-                echo "Aucune photo";
-            }
-            echo "</td>
-                    <td>" . ($row["date_debut"]) . "</td>
-                    <td>" . ($row["date_fin"]) . "</td>
+                    <td>" . htmlspecialchars($row["fonction"]) . "</td>
+                    <td><img src='" . htmlspecialchars($row['photo']) . "'style='width: 100px; height: 100px; object-fit: cover; border-radius: 5px;'></td>
+                    <td>" . htmlspecialchars($row["comm"]) . "</td>
+                    <td>" . htmlspecialchars($row["date_debut"]) . "</td>
+                    <td>" . htmlspecialchars($row["date_fin"]) . "</td>
                 </tr>";
         }
 
@@ -63,12 +58,10 @@ if ($stmt) {
 
     echo '</div></body></html>';
 
-    // Fermeture du statement
     $stmt->close();
 } else {
     echo "Erreur de préparation de la requête : " . $conn->error;
 }
 
-// Fermeture de la connexion
 $conn->close();
 ?>

@@ -1,3 +1,18 @@
+
+<?php
+
+ 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bijouterie_chimere";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,19 +26,26 @@
     <h2>Bijoux assignés</h2>
     <table>
         <tr>
-            <th>Image</th>
             <th>Nom</th>
             <th>Description</th>
-            <th>Étape actuelle</th>
+            <th>Intervenant</th>
             <th>Actions</th>
         </tr>
-        <tr>
-            <td><img src="bague_emeraude.jpg" alt="Bague Émeraude" width="100"></td>
-            <td><?php echo $_POST['nom_bijou']; ?></td>
-            <td>Bague en or avec une émeraude centrale</td>
-            <td>Fonte</td>
-            <td><button onclick="ouvrirFormulaire()">Intervenir</button></td>
-        </tr>
+        <!----Récupérer les infos d'une autre table---->
+        <?php 
+        $requete = "SELECT nom_bijou, carct_bijou, fonction FROM creation_bijoux";
+        $resultat = $conn->query($requete);
+        while ($donnees = $resultat->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($donnees['nom_bijou']) . "</td>";
+            echo "<td>" . htmlspecialchars($donnees['carct_bijou']) . "</td>";
+            echo "<td>" . htmlspecialchars($donnees['fonction']) . "</td>";
+            echo "<td><button onclick='ouvrirFormulaire()'>Intervenir</button></td>";
+            echo "</tr>";
+        }
+        ?>
+
+        
     </table>
 
     <h2>Formulaire d’intervention</h2>
@@ -61,6 +83,9 @@
             <option value="Samson(Polisseur)">Samson(Polisseur)</option>
             <option value="Gabriel(Polisseur)">Gabriel(Polisseur)</option>
         </select>
+
+        <label for="status">Status:</label>
+       <input type="checkbox" name="status" value="Terminé">
 
         <button type="submit">Valider l’intervention</button>
     </form>

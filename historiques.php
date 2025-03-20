@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Préparation et exécution de la requête SQL
-$sql = "SELECT nom_bijou, mail_commandeur, photo, prix_payer, date_debut, date_fin  FROM reparation";
+$sql = "SELECT fonction, nom_bijou, mail_commandeur, photo, prix_payer, date_debut, date_fin  FROM reparation";
 $stmt = $conn->prepare($sql);
 
 if ($stmt) {
@@ -37,29 +37,24 @@ if ($stmt) {
                 <tr>
                     <th>Opérateur</th>
                     <th>Photo</th>
+                    <th>Nom du bijou</th>
                     <th>Mail du commandeur</th>
                     <th>Prix</th>
                     <th>Date début</th>
                     <th>Date fin</th>
                 </tr>';
         
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>
-                    <td>" . ($row["nom_bijou"]) . "</td>
-                    <td>" . ($row["photo"]) . "</td>
-                    <td>" . ($row["mail_commandeur"]) . "</td>
-                    <td>" . htmlspecialchars($row["prix_payer"]) . "</td>";
-            if (!empty($row["photo"])) {
-                 
-            } else {
-                echo "Aucune photo";
-            }
-            echo "</td>
-                    <td>" . ($row["date_debut"]) . "</td>
-                    <td>" . ($row["date_fin"]) . "</td>
-                </tr>";
-        }
-
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['fonction']) . "</td>";
+                    echo "<td><img src='" . htmlspecialchars($row['photo']) . "' alt='Image du bijou' style='width: 100px; height: 100px; object-fit: cover; border-radius: 5px;'></td>";
+                    echo "<td>" . htmlspecialchars($row['nom_bijou']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['mail_commandeur']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['prix_payer']) . " €</td>";
+                    echo "<td>" . htmlspecialchars($row['date_debut']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['date_fin']) . "</td>";
+                    echo "</tr>";
+                }
         echo '</table>';
     } else {
         echo "<p>Aucune intervention trouvée.</p>";
