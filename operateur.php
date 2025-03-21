@@ -22,6 +22,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <link rel="stylesheet" href="monstyle.css">
 </head>
 <body>
+
     <h1>Espace Fondeur</h1>
     <h2>Bijoux assignés</h2>
     <table>

@@ -46,7 +46,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </table>
 
     <h2>Formulaire d’intervention</h2>
-    <form action="validation.php" method="post" id="form-intervention" style="display:none;">
+    <form action="validations.php" method="post" id="form-intervention" style="display:none;">
         <label for="etape">Type d'intervention :</label>
         <select name="fonction">
                 <option value="fondeur" disabled selected>Fondeur</option>

@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 switch (strtolower(trim($db_fonction))) {
                     case "chef_atelier":
                         // Redirection vers le tableau de bord du chef
-                        header('Location: sucess.php');
+                        header('Location: Acceuil.html');
                         exit;
                     case "fondeur":
                     case "polisseur":

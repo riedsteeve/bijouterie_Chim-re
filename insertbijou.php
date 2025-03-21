@@ -41,7 +41,7 @@ $stmt->bind_param("sssssss", $nom_bijou, $chemin, $mail_commandeur, $prix_payer,
 
 // Vérification de l'exécution de la requête
 if ($stmt->execute()) {
-    echo "Réparation ajoutée au tableau avec succès !";
+   header('Location: reussite.php');
 } else {
     echo "Erreur lors de l'ajout de la réparation : " . $stmt->error;
 }

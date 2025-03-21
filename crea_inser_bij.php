@@ -27,7 +27,7 @@ $stmt->bind_param( "sssssss", $nom_bijou, $carct_bijou, $mail_commandeur, $prix_
 $stmt->execute();
 
 if($sql) {
-    echo "Commande engrésistré avec succes";
+    header('Location: reussite.php');
     } else {
         echo "Erreur lors de l'insertion de la commande";
         }

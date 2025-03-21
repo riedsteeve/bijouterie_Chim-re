@@ -11,13 +11,20 @@
     <h2>Bijoux assignés</h2>
     <table>
         <tr>
-            <th>Image</th>
             <th>Nom</th>
             <th>Description</th>
             <th>Étape actuelle</th>
             <th>Actions</th>
         </tr>
         <?php 
+
+        
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bijouterie_chimere";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
         $requete = "SELECT nom_bijou, carct_bijou, fonction FROM creation_bijoux";
         $resultat = $conn->query($requete);
         while ($donnees = $resultat->fetch_assoc()) {
@@ -32,7 +39,7 @@
     </table>
 
     <h2>Formulaire d'intervention</h2>
-    <form action="validation.php" method="post" id="form-intervention" style="display:none;">
+    <form action="validationt.php" method="post" id="form-intervention" style="display:none;">
         <label for="etape">Type d'intervention :</label>
         <select name="fonction" id="etape">
             <option value="fonte">Fonte</option>
@@ -70,7 +77,7 @@
             <label for="status">Status:</label>
        <input type="checkbox" name="status" value="Terminé">
 
-        <button type="submit">Valider l’intervention</button>
+        <button type="submit">Terminer</button>
     </form>
 
 

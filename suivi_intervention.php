@@ -1,3 +1,34 @@
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<a href="Acceuil.html" style="margin-top: 10%;"><i class="fa-solid fa-house-user" style="color: #800000; "></i></a>
+
+<style>
+        a{
+            list-style: none;
+            text-decoration: none;
+            background-color: #ccc;
+            padding: 1%;
+            border-radius: 5px 5px 5px 5px;
+            color: white;
+            text-align: center;
+            margin-bottom: -20%;
+            position:absolute;
+            top:-90px;
+            left:0;
+            margin:10px;
+
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+
+</html>
+
 <?php 
 $servername = "localhost";
 $username = "root";
@@ -36,7 +67,6 @@ if ($stmt) {
         echo '<table>
                 <tr>
                     <th>Fonction</th>
-                    <th>Photo</th>
                     <th>Commentaire</th>
                     <th>Date début</th>
                     <th>Date fin</th>
@@ -44,7 +74,6 @@ if ($stmt) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
                     <td>" . htmlspecialchars($row["fonction"]) . "</td>
-                    <td><img src='" . htmlspecialchars($row['photo']) . "'style='width: 100px; height: 100px; object-fit: cover; border-radius: 5px;'></td>
                     <td>" . htmlspecialchars($row["comm"]) . "</td>
                     <td>" . htmlspecialchars($row["date_debut"]) . "</td>
                     <td>" . htmlspecialchars($row["date_fin"]) . "</td>
